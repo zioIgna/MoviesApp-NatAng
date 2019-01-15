@@ -1,7 +1,10 @@
 {
   "name": "movies",
   "nativescript": {
-    "id": "org.nativescript.movies"
+    "id": "org.nativescript.movies",
+    "tns-android": {
+      "version": "5.1.0"
+    }
   },
   "version": "0.0.0",
   "scripts": {
