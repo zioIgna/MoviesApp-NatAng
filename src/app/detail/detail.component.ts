@@ -25,7 +25,7 @@ export class DetailComponent implements OnInit {
     this.api.getDetailsMovie(id).subscribe(
       data =>{
         this.movie = data;
-        console.log(this.movie);
+        console.log('movie fetched: ', this.movie);
       },
       error => console.log("Error from the server: ", error)
     )

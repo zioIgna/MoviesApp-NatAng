@@ -9,12 +9,14 @@ import { ApiService } from '../api.service';
 })
 export class HomeComponent implements OnInit {
   title = 'movies';
-  movies = [];
-
+  movies;
+ 
   constructor(private api: ApiService) { }
 
   ngOnInit() {
     this.getMovies();
+    console.log('These are the movies: ' , this.movies);
+    
   }
 
   getMovies(){
