@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { GlobalsService } from '../globals.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detail',
@@ -14,7 +15,7 @@ export class DetailComponent implements OnInit {
   movie: any;
   mediaUrl: string;
 
-  constructor(private route: ActivatedRoute, private api: ApiService, private globals: GlobalsService) {
+  constructor(private route: ActivatedRoute, private api: ApiService, private globals: GlobalsService, private location: Location) {
     this.mediaUrl = globals.getBaseUrl() + '/media/';
   }
 
@@ -22,17 +23,20 @@ export class DetailComponent implements OnInit {
     const id = +this.route.snapshot.params['id'];
     console.log('id: ', id);
     this.getMovie(id);
-
   }
 
-  getMovie(id: number){
+  getMovie(id: number) {
     this.api.getDetailsMovie(id).subscribe(
-      data =>{
+      data => {
         this.movie = data;
         console.log('movie fetched: ', this.movie);
       },
       error => console.log("Error from the server: ", error)
     )
+  }
+
+  backClicked() {
+    this.location.back();
   }
 
 }

@@ -1,8 +1,8 @@
-<ActionBar title="List of movies"></ActionBar>
-<StackLayout  class="p-20">
+<ActionBar title="List of movies" class="action-bar"></ActionBar>
+<WrapLayout orientation="horizontal" class="p-20">
     <StackLayout *ngFor="let movie of movies" [nsRouterLink]="['/detail', movie.id]">
-        <!-- <Image [src]="mediaUrl + movie.img_2" width="100"></Image> -->
-        <Image [src]="movie.poster" width="100"></Image>
+        <!-- <Image [src]="mediaUrl + movie.img_2" width="100" class="m-5"></Image> -->
+        <Image [src]="movie.poster" width="100" class="m-5"></Image>
         <!-- <Label text="{{ movie.title }}" class="h1 text-center" textWrap="true"></Label> -->
     </StackLayout>
-</StackLayout>
+</WrapLayout>

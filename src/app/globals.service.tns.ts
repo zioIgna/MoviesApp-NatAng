@@ -13,8 +13,8 @@ export class GlobalsService {
     // da Android 9 si incorre in errore di Cleartext
     // l'url 'http://movserv2-env.dpp...' non è necessaria in quanto basta il localhost 10.0.2.2
     if (isAndroid) {
-      // this.baseUrl = 'http://movserv2-env.dppfpp23ez.eu-west-1.elasticbeanstalk.com';
-      this.baseUrl = 'http://10.0.2.2:3000';
+      this.baseUrl = 'http://movserv2-env.dppfpp23ez.eu-west-1.elasticbeanstalk.com';
+      // this.baseUrl = 'http://10.0.2.2:3000';
     }
   }
 
