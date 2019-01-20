@@ -5,7 +5,10 @@
   </h1>
 </div>
 <ul>
-  <li *ngFor="let movie of movies" [routerLink]="['/detail', movie.id]">
+  <div *ngFor="let movie of movies" [routerLink]="['/detail', movie.id]">
+    <!-- funzionano entrambi i seguenti metodi per il passaggio delle immagini: -->
+    <!-- <img [src]="mediaUrl + movie.img_2"> -->
+    <img [src]="movie.poster">
     <h2>{{movie.title}}</h2>
-  </li>
+  </div>
 </ul>
